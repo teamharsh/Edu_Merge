@@ -6,6 +6,13 @@ A modern, full-stack e-learning platform built with Turborepo, enabling educator
 
 Edu_Merge is a comprehensive monorepo project that provides a complete solution for online course management. It features a multi-tenant architecture with custom subdomain support, allowing educators to have their own branded spaces to showcase and sell courses.
 
+## 🚀 Quick Deploy
+
+Want to deploy this project? Check out our deployment guides:
+
+- 📖 **[Complete Deployment Guide](./DEPLOYMENT.md)** - Detailed instructions for deploying web, docs, and backend
+- ⚡ **[Quick Deploy Guide](./QUICK_DEPLOY.md)** - Get deployed in 10 minutes!
+
 ## 🏗️ Project Architecture
 
 This is a **Turborepo** monorepo containing multiple applications and shared packages:
@@ -26,29 +33,32 @@ edu_merge/
 ## 🚀 Tech Stack
 
 ### Frontend
+
 - **Framework**: Next.js 14.2.6 (App Router)
 - **Styling**: Tailwind CSS 3.4.17
-- **UI Components**: 
+- **UI Components**:
   - Radix UI (Accessible component primitives)
   - shadcn/ui components
   - Aceternity UI (Premium animated components)
 - **Animations**: Framer Motion 11.15.0
 - **TypeScript**: 5.x
-- **Icons**: 
+- **Icons**:
   - Lucide React
   - React Icons
   - Tabler Icons
 
 ### Backend
+
 - **Runtime**: Node.js
 - **Framework**: Express.js 4.21.1
 - **Database**: MongoDB (Mongoose 8.7.3)
-- **Authentication**: 
+- **Authentication**:
   - Passport.js (Google OAuth & JWT)
   - JWT tokens
 - **Validation**: Zod schemas
 
 ### DevOps & Tooling
+
 - **Monorepo**: Turborepo 2.2.3
 - **Package Manager**: npm 10.8.1
 - **Linting**: ESLint 8.x
@@ -59,8 +69,10 @@ edu_merge/
 ### Root Configuration Files
 
 #### `package.json`
+
 Root workspace configuration managing all sub-packages:
-- **Scripts**: 
+
+- **Scripts**:
   - `build`: Builds all apps and packages
   - `dev`: Runs all apps in development mode
   - `lint`: Lints all projects
@@ -68,13 +80,16 @@ Root workspace configuration managing all sub-packages:
 - **Workspaces**: `apps/*` and `packages/*`
 
 #### `turbo.json`
+
 Turborepo pipeline configuration:
+
 - Defines build dependencies and caching strategies
 - Configures parallel task execution
 - Environment variable handling
 - Output caching for `.next/` and `dist/`
 
 #### `.npmrc`
+
 npm configuration file for workspace settings
 
 ---
@@ -86,15 +101,17 @@ npm configuration file for workspace settings
 A Next.js application for project documentation.
 
 **Key Files**:
+
 - `app/page.tsx`: Main documentation landing page
 - `app/layout.tsx`: Root layout with Geist fonts
 - `app/globals.css`: Global styles with dark mode support
 - `next.config.mjs`: Next.js configuration
-- `package.json`: 
+- `package.json`:
   - Port: `3001`
   - Dependencies: React 18.3.1, Next.js 14.2.6
 
 **Features**:
+
 - Geist Sans and Geist Mono fonts
 - Dark mode support
 - Responsive design
@@ -155,6 +172,7 @@ web/
 **Key Features**:
 
 1. **Landing Page Components**:
+
    - Animated background lines hero section
    - Feature cards with hover effects
    - Infinite moving testimonials
@@ -163,12 +181,14 @@ web/
    - Animated world map with location dots
 
 2. **Screen Recording**:
+
    - Browser screen capture API
    - Video recording with MediaRecorder
    - Download functionality
    - Preview playback
 
 3. **UI Component Library** (50+ components):
+
    - Radix UI primitives (Dialog, Dropdown, Popover, etc.)
    - Form components (Input, Checkbox, Radio, etc.)
    - Data display (Table, Card, Timeline)
@@ -235,17 +255,20 @@ backend/
 **Key Features**:
 
 1. **Authentication**:
+
    - Google OAuth 2.0 integration
    - JWT-based session management
    - OTP email verification
    - Passport.js strategies
 
 2. **Database**:
+
    - MongoDB with Mongoose ODM
    - User model
    - Workspace/tenant model
 
 3. **API Features**:
+
    - RESTful endpoints
    - Request validation with Zod
    - Authentication middleware
@@ -256,6 +279,7 @@ backend/
    - Workspace isolation
 
 **Environment Variables** (`.env.example`):
+
 - Database connection strings
 - Google OAuth credentials
 - JWT secrets
@@ -269,6 +293,7 @@ backend/
 Centralized linting configurations for the monorepo.
 
 **Files**:
+
 - `library.js`: Config for library packages
 - `next.js`: Config for Next.js apps
 - `react-internal.js`: Config for internal React components
@@ -283,6 +308,7 @@ Centralized linting configurations for the monorepo.
 Centralized TypeScript configurations.
 
 **Files**:
+
 - `base.json`: Base TypeScript config
 - `nextjs.json`: Next.js-specific settings
 - `react-library.json`: React library settings
@@ -297,6 +323,7 @@ Centralized TypeScript configurations.
 Reusable React components shared across apps.
 
 **Structure**:
+
 ```
 ui/
 ├── src/
@@ -314,6 +341,7 @@ ui/
 ```
 
 **Features**:
+
 - Typed React components
 - Turbo code generation
 - Consistent styling
@@ -332,17 +360,20 @@ ui/
 ### Installation Steps
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd Edu_Merge
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Configure backend environment**:
+
    ```bash
    cd packages/backend
    cp .env.example .env
@@ -350,6 +381,7 @@ ui/
    ```
 
 4. **Build all packages**:
+
    ```bash
    npm run build
    ```
@@ -360,6 +392,7 @@ ui/
    ```
 
 This will start:
+
 - `docs` app on `http://localhost:3001`
 - `web` app on `http://localhost:3000`
 - Backend API (port configured in `.env`)
@@ -414,6 +447,7 @@ The project uses a **modern dark theme** with vibrant accent colors:
 ### Components
 
 All UI components follow:
+
 - Radix UI accessibility standards
 - Dark mode support
 - Smooth animations with Framer Motion
@@ -426,25 +460,30 @@ All UI components follow:
 ### Platform Features
 
 1. **🌐 Custom Subdomain**
+
    - Each educator gets their own branded space (e.g., `yourname.edumerge.com`)
    - Customizable branding, colors, and logo
 
 2. **📚 Course Creation**
+
    - Easy upload of videos, PDFs, quizzes
    - Drag-and-drop module organization
    - Rich text content support
 
 3. **🤖 AI-Powered Support**
+
    - 24/7 chatbot for student assistance
    - Automated FAQ responses
    - Intelligent learning path suggestions
 
 4. **📝 Smart Notes & Reviews**
+
    - Global note search
    - Personal annotations
    - Bookmark key insights
 
 5. **💬 Community Features**
+
    - Discussion boards
    - Live sessions
    - Peer-to-peer learning
@@ -520,6 +559,7 @@ UI component generation config:
 ## 🗄️ Database Schema
 
 ### User Model
+
 ```typescript
 {
   _id: ObjectId,
@@ -534,6 +574,7 @@ UI component generation config:
 ```
 
 ### Workspace Model
+
 ```typescript
 {
   _id: ObjectId,
